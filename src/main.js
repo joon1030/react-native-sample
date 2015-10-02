@@ -21,7 +21,7 @@ var deviceHeight = Dimensions.get('window').height;
 
 var styles = StyleSheet.create({
     scrollView : {
-        paddingTop : 60,
+        marginTop : 0,
         backgroundColor : '#ddd',
         flexDirection: 'column'
     },
