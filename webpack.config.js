@@ -23,11 +23,11 @@ var config = {
       test: /\.js$/,
       exclude: /node_modules/,
       include: path.resolve(__dirname, 'src'),
-      loader: 'babel-loader?stage=0,blacklist=validation.react'
-      //query: {
-      //  stage: 0,
-      //  plugins: []
-      //}
+      loader: 'babel',
+      query: {
+       stage: 0,
+       plugins: []
+      }
     }]
   },
 
@@ -56,9 +56,9 @@ if (process.env.HOT) {
 }
 
 // Production config
-if (process.env.NODE_ENV === 'production') {
+// if (process.env.NODE_ENV === 'production') {
   config.plugins.push(new webpack.optimize.OccurrenceOrderPlugin());
   config.plugins.push(new webpack.optimize.UglifyJsPlugin());
-}
+// }
 
 module.exports = config;
